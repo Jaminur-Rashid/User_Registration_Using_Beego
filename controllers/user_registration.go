@@ -34,12 +34,6 @@ type User struct {
 
 func (c *UserRegistration) Get() {
 	c.TplName = "user_registration.tpl"
-	/*
-		data := &JSONS{"100", "Get successful",
-			[]string{"maple", "18"}, LIKE{"cake", "Movie", "music"}}
-		c.Data["json"] = data
-		c.ServeJSON()
-	*/
 }
 func (u *UserRegistration) Post() {
 	var obj User
@@ -81,7 +75,7 @@ func (u *UserRegistration) Post() {
 	}
 	sb := string(body)
 	fmt.Println(sb)
-	//fmt.Println(postBody)
+	u.Data["Msg"] = sb
 
 	u.TplName = "user_registration.tpl"
 }

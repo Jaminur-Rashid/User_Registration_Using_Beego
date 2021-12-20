@@ -35,7 +35,6 @@
   }
   </style>
 </head>
-
 <body>
   <header>
     <h1></h1>
@@ -46,7 +45,7 @@
     <form action="/add-user" method="post" >
       <div class="heading-container">
       <h1>Register Here</h1>
-      <p>Please fill in this form to create an account.</p>
+      <h5>Please fill in this form to create an account.</h5>
       </div>
       <div class="form-group">
         <label for="firstName">First Name</label>
@@ -72,8 +71,9 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
       </div>
-      <button type="submit" class="register-btn">Submit</button>
+      <button type="submit" class="register-btn">Register</button>
     </form>
+    <p style="color:blue;text-align:center;">{{.Msg}}</p>
   </div>
  
 </body>

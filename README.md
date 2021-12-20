@@ -18,7 +18,7 @@ coded the error message if have.
 To run the project follow the procedure below,
 * After installing and configuring go, beego and bee in the system clone the github repository.
 
-* After creating a database and user_info_table run,
+* After creating a database and user_data_table run,
 ``` bash
 go mod tidy
 ```
@@ -33,4 +33,4 @@ http://localhost:8081/add-user
 ```
 Now after entering the data in the form input field press the Register Button and look up in the Beego_Restful_Api server to view the output.
 # Note
-* If any of the input field is invalid the error message is shown in the `Beego_Restful_Api` Project terminal.
+* If any of the input field is invalid the error message is shown in the Buttom of the `user_registration.tpl` page.
