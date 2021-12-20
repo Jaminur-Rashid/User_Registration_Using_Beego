@@ -14,7 +14,7 @@ This is a simple user registration application using beego and postgresql.
 
 # How the run the project
 To run the project follow the procedure below,
-After installing and configuring go, beego and bee in the system clone the github repository.
+* After installing and configuring go, beego and bee in the system clone the github repository.
 
 * After creating a database and user_info_table run,
 ``` bash
