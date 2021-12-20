@@ -5,7 +5,9 @@ This is a simple user registration application using beego and postgresql.
 * Register user with properties like First Name, Last Name, Email, Phone, Password, Date of birth
 * Stores user hashed password
 * Validated user data before inserting into the Database
-* For form validation I have used regular expression, and hard coded the error message if have.
+* Prevented user registration using duplicate `email`
+* For form validation I have used regular expression, and hard 
+coded the error message if have.
 # Prerequisites
 * Go
 * Beego and bee
@@ -27,6 +29,8 @@ The above command will import all the dependencies of the project.
 ```
 Now go to the URL,
 ``` bash
-http://localhost:8080/swagger/
+http://localhost:8081/add-user
 ```
-Now you can test the api in the Object section
+Now after entering the data in the form input field press the Register Button and look up in the Beego_Restful_Api server to view the output.
+# Note
+* If any of the input field is invalid the error message is shown in the `Beego_Restful_Api` Project terminal.

@@ -29,7 +29,7 @@ type User struct {
 	Phone       string `json:"Phone"`
 	Email       string `json:"Email"`
 	Password    string `json:"Password"`
-	DateOfBrith string `json:"DateOfBrith"`
+	DateOfBirth string `json:"DoB"`
 }
 
 func (c *UserRegistration) Get() {
@@ -41,31 +41,35 @@ func (c *UserRegistration) Get() {
 		c.ServeJSON()
 	*/
 }
-func (c *UserRegistration) Post() {
+func (u *UserRegistration) Post() {
 	var obj User
-	firstName := c.GetString("firstName")
-	lastName := c.GetString("lastName")
-	email := c.GetString("email")
-	phone := c.GetString("phone")
-	dob := c.GetString("dob")
-	password := c.GetString("password")
+	email := u.GetString("email")
+	phone := u.GetString("phone")
+	dateOfBirth := u.GetString("dob")
+	password := u.GetString("password")
+	firstName := u.GetString("firstName")
+	lastName := u.GetString("lastName")
+
 	obj.FirstName = firstName
 	obj.LastName = lastName
 	obj.Email = email
 	obj.Phone = phone
-	obj.DateOfBrith = dob
+	obj.DateOfBirth = dateOfBirth
 	obj.Password = password
 
-	postBody, _ := json.Marshal(map[string]string{
+	userData, _ := json.Marshal(map[string]string{
 		"FirstName":   firstName,
 		"LastName":    lastName,
 		"Phone":       phone,
 		"Email":       email,
 		"Password":    password,
-		"DateOfBrith": dob,
+		"DoB": dateOfBirth,
 	})
-	responseBody := bytes.NewBuffer(postBody)
+	responseBody := bytes.NewBuffer(userData)
 	fmt.Println(responseBody)
+	/*
+		call Beego_Restful_Api with user data
+	*/
 	resp, err := http.Post("http://127.0.0.1:8080/v1/object", "application/json", responseBody)
 	if err != nil {
 		log.Fatalf("An Error Occured %v", err)
@@ -79,5 +83,5 @@ func (c *UserRegistration) Post() {
 	fmt.Println(sb)
 	//fmt.Println(postBody)
 
-	c.TplName = "user_registration.tpl"
+	u.TplName = "user_registration.tpl"
 }

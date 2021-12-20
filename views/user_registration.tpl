@@ -43,7 +43,7 @@
     </div>
   </header>
   <div class="container">
-    <form action="/add-user" method="post">
+    <form action="/add-user" method="post" >
       <div class="heading-container">
       <h1>Register Here</h1>
       <p>Please fill in this form to create an account.</p>
